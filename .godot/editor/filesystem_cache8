@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1719368933
+checkboxes.tres::ButtonGroup::6688020614422799016::1719324376::0::1::::<><>::
+COUR.TTF::FontFile::272078108754472810::1717814478::1719368939::1::::<><>::
+icon.svg::CompressedTexture2D::5374382024442537801::1719236781::1719236791::1::::<><>::
+Main.gd::GDScript::-1::1719360785::0::1::::<>Control<>::
+Main.tscn::PackedScene::5321935530144558821::1719368878::0::1::::<><>::res://Main.gd<>uid://c2jyytcyoqtsy::::res://checkboxes.tres
+questions_level.json::JSON::-1::1719238036::0::1::::<><>::

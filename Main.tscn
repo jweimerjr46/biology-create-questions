@@ -1,0 +1,308 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch28ra0bg7psf"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_f20bv"]
+[ext_resource type="ButtonGroup" uid="uid://c2jyytcyoqtsy" path="res://checkboxes.tres" id="2_4u41o"]
+[ext_resource type="FontFile" uid="uid://d42c7hwo02n3" path="res://COUR.TTF" id="3_dy5c1"]
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_yfc22"]
+number_color = Color(0.611765, 0.862745, 0.996078, 1)
+symbol_color = Color(0.811765, 0.533333, 0.796078, 1)
+function_color = Color(0.662745, 0.886275, 0.721569, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_f20bv")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+
+[node name="MainMenu" type="MenuBar" parent="MarginContainer2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 17
+theme_override_font_sizes/font_size = 30
+
+[node name="File" type="PopupMenu" parent="MarginContainer2/MainMenu"]
+title = "File"
+size = Vector2i(136, 100)
+theme_override_font_sizes/font_size = 25
+item_count = 2
+item_0/text = "Load File"
+item_0/id = 0
+item_1/text = "Save As"
+item_1/id = 1
+
+[node name="Questions" type="PopupMenu" parent="MarginContainer2/MainMenu"]
+title = "File"
+theme_override_font_sizes/font_size = 25
+item_count = 1
+item_0/text = "Stats"
+item_0/id = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_bottom = NodePath("HBoxContainer3/Option3")
+theme_override_constants/separation = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 14
+
+[node name="QuestionLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "QUESTION"
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Question Text"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 14
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="OptionsLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.5
+theme_override_font_sizes/font_size = 35
+text = "OPTIONS
+"
+
+[node name="Select Answer" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+text = "Answer"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Option1" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.5
+focus_neighbor_left = NodePath("../../HBoxContainer4/Option4")
+focus_neighbor_top = NodePath("../../HBoxContainer4/Option4")
+focus_neighbor_right = NodePath("../../HBoxContainer2/Option2")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/Option2")
+focus_next = NodePath("../../HBoxContainer2/Option2")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Option 1"
+clear_button_enabled = true
+
+[node name="Option1CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+button_group = ExtResource("2_4u41o")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Option2" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.5
+focus_neighbor_left = NodePath("../../HBoxContainer/Option1")
+focus_neighbor_top = NodePath("../../HBoxContainer/Option1")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../../HBoxContainer3/Option3")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Option 2"
+clear_button_enabled = true
+
+[node name="Option2CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+button_group = ExtResource("2_4u41o")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Option3" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.5
+focus_neighbor_left = NodePath("../../HBoxContainer2/Option2")
+focus_neighbor_top = NodePath("../../HBoxContainer2/Option2")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../../HBoxContainer4/Option4")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Option 3"
+clear_button_enabled = true
+
+[node name="Option3CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 2
+button_group = ExtResource("2_4u41o")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Option4" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.5
+focus_neighbor_left = NodePath("../../HBoxContainer3/Option3")
+focus_neighbor_top = NodePath("../../HBoxContainer3/Option3")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../../HBoxContainer/Option1")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Option 4"
+clear_button_enabled = true
+
+[node name="Option4CheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 2
+button_group = ExtResource("2_4u41o")
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 23
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="XPLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "XP"
+
+[node name="XPEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "XP"
+alignment = 1
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "      LEVEL"
+
+[node name="LevelEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Level"
+alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 14
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CreateQuestionButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 35
+text = " Create Question "
+
+[node name="SaveQuestion" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " Save Question "
+
+[node name="ClearButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer7"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " Clear "
+
+[node name="StatsLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "STATS
+"
+
+[node name="InfoLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "This is where the stats will be 
+displayed
+
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="CodeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "CODE"
+
+[node name="CodeEdit" type="CodeEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_dy5c1")
+theme_override_font_sizes/font_size = 35
+syntax_highlighter = SubResource("CodeHighlighter_yfc22")
+gutters_draw_line_numbers = true
+code_completion_enabled = true
+indent_automatic = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 14
+
+[node name="PreviewLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "PREVIEW JSON"
+
+[node name="PreviewEdit" type="CodeEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer7/CreateQuestionButton" to="." method="_on_create_question_button_pressed"]
