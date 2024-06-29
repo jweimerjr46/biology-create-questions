@@ -284,7 +284,7 @@ text = "SELECT IMAGE"
 
 [node name="FileDialog" type="FileDialog" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 disable_3d = true
-title = "Open an Image"
+title = "Open a File"
 initial_position = 4
 size = Vector2i(800, 400)
 content_scale_factor = 1.5
@@ -297,7 +297,6 @@ use_native_dialog = true
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[image]res://image/carbon.jpg[/image]"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

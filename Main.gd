@@ -61,7 +61,5 @@ func _on_select_image_button_pressed():
 
 func _on_file_dialog_file_selected(path):
 	image_file_name = get_image.current_file
-	#image_preview_label.text = "[image]"+path+"[/image]"
-	
-	
+	image_preview_label.text = "[img]"+path+"[/img]"	
 	print(get_image.current_file)
