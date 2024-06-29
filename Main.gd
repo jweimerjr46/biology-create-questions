@@ -11,33 +11,18 @@ extends Control
 @onready var option_4_checkbox = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer4/Option4CheckBox
 @onready var xp_text = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer6/XPEdit
 @onready var level_text = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer6/LevelEdit
-@onready var code_text = $MarginContainer/HBoxContainer/VBoxContainer/CodeEdit
 @onready var preview_text = $MarginContainer/HBoxContainer/VBoxContainer/PreviewEdit
-# Called when the node enters the scene tree for the first time.
-
+@onready var get_image = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/FileDialog
+@onready var image_preview_label = $MarginContainer/HBoxContainer/VBoxContainer/ImagePreviewLabel
+var image_file_name = ""
 
 func _ready():
-	var python_keywords = [
-	"False", "None", "True", "and", "as", "assert", "async", "await", "break", "class", 
-	"continue", "def", "del", "elif", "else", "except", "finally", "for", "from", "global", 
-	"if", "import", "in", "is", "lambda", "nonlocal", "not", "or", "pass", "raise", "return", 
-	"try", "while", "with", "yield"
-]
+	pass
 
-	# adds keywords and color for keywords
-	for keyword in python_keywords:
-		code_text.syntax_highlighter.add_keyword_color(keyword, Color("#569cd6"))
+	
 
-	# formats strings
-	code_text.syntax_highlighter.add_color_region('"', '"', Color("#fff980"))
-	code_text.syntax_highlighter.add_color_region("'", "'", Color("#fff980"))
-
-	# formats comments
-	code_text.syntax_highlighter.add_color_region('#', '', Color("#d1d1d1"))
 
 '''
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -58,7 +43,7 @@ func _on_create_question_button_pressed():
 			print("You have not selected anything")		
 		var question = { "question":question_text.text,
 		 "options":[option_1.text, option_2.text, option_3.text, option_4.text],
-		"correct": correct_answer, "xp": xp_text.text, "level": level_text.text, "code": code_text.text}
+		"correct": correct_answer, "xp": xp_text.text, "level": level_text.text, "image": image_file_name}
 		var json_string = JSON.stringify(question, "\t")
 		print(json_string)
 		var json = JSON.new()
@@ -67,3 +52,16 @@ func _on_create_question_button_pressed():
 		preview_text.text = json_string
 	else:
 		print("You have not checked an answer")
+
+
+
+func _on_select_image_button_pressed():
+	get_image.visible = true
+
+
+func _on_file_dialog_file_selected(path):
+	image_file_name = get_image.current_file
+	#image_preview_label.text = "[image]"+path+"[/image]"
+	
+	
+	print(get_image.current_file)

@@ -1,6 +1,8 @@
 Button
-MarginContainer
+FileDialog
 HBoxContainer
+RichTextLabel
+MarginContainer
 Label
 CheckButton
 PopupMenu

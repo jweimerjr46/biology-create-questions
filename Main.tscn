@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch28ra0bg7psf"]
+[gd_scene load_steps=3 format=3 uid="uid://ch28ra0bg7psf"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_f20bv"]
 [ext_resource type="ButtonGroup" uid="uid://c2jyytcyoqtsy" path="res://checkboxes.tres" id="2_4u41o"]
-[ext_resource type="FontFile" uid="uid://d42c7hwo02n3" path="res://COUR.TTF" id="3_dy5c1"]
-
-[sub_resource type="CodeHighlighter" id="CodeHighlighter_yfc22"]
-number_color = Color(0.611765, 0.862745, 0.996078, 1)
-symbol_color = Color(0.811765, 0.533333, 0.796078, 1)
-function_color = Color(0.662745, 0.886275, 0.721569, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -274,22 +268,36 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 6
 
-[node name="CodeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="ImageLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "CODE"
+text = "IMAGE"
 
-[node name="CodeEdit" type="CodeEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="SelectImageButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "SELECT IMAGE"
+
+[node name="FileDialog" type="FileDialog" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+disable_3d = true
+title = "Open an Image"
+initial_position = 4
+size = Vector2i(800, 400)
+content_scale_factor = 1.5
+ok_button_text = "Open"
+file_mode = 0
+root_subfolder = "images"
+use_native_dialog = true
+
+[node name="ImagePreviewLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_dy5c1")
-theme_override_font_sizes/font_size = 35
-syntax_highlighter = SubResource("CodeHighlighter_yfc22")
-gutters_draw_line_numbers = true
-code_completion_enabled = true
-indent_automatic = true
-auto_brace_completion_enabled = true
-auto_brace_completion_highlight_matching = true
+bbcode_enabled = true
+text = "[image]res://image/carbon.jpg[/image]"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -306,3 +314,5 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer7/CreateQuestionButton" to="." method="_on_create_question_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/SelectImageButton" to="." method="_on_select_image_button_pressed"]
+[connection signal="file_selected" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/FileDialog" to="." method="_on_file_dialog_file_selected"]

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Question Creator"
+config/name="Biology Question Creator"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/low_processor_mode=true
 config/icon="res://icon.svg"
