@@ -1,0 +1,95 @@
+[
+	{
+		"code": "def add(a, b):\n    return a + b",
+		"correct_answer": "Adds two numbers",
+		"level": "0",
+		"options": [
+			"Adds two numbers",
+			"Concatenates two strings",
+			"Subtracts b from a",
+			"Multiplies a and b"
+		],
+		"question": "What does the following Python code do?",
+		"xp": "10"
+	},
+	{
+		"code": "print(\"Hello, World!\")",
+		"correct_answer": "Hello, World!",
+		"level": "0",
+		"options": [
+			"Hello, World!",
+			"Hello World",
+			"Error",
+			"None"
+		],
+		"question": "What will be the output of the following code?",
+		"xp": "10"
+	},
+	{
+		"code": "def subtract(a, b):\n    return a - b",
+		"correct_answer": "Subtracts b from a",
+		"level": "1",
+		"options": [
+			"Adds two numbers",
+			"Concatenates two strings",
+			"Subtracts b from a",
+			"Multiplies a and b"
+		],
+		"question": "What does the following Python code do?",
+		"xp": "10"
+	},
+	{
+		"code": "print(\"Goodbye, World!\")",
+		"correct_answer": "Goodbye, World!",
+		"level": "1",
+		"options": [
+			"Goodbye, World!",
+			"Goodbye World",
+			"Error",
+			"None"
+		],
+		"question": "What will be the output of the following code?",
+		"xp": "10"
+	},
+	{
+		"code": "def multiply(a, b):\n    return a * b",
+		"correct_answer": "Multiplies a and b",
+		"level": "1",
+		"options": [
+			"Adds two numbers",
+			"Concatenates two strings",
+			"Subtracts b from a",
+			"Multiplies a and b"
+		],
+		"question": "What does the following Python code do?",
+		"xp": "10"
+	},
+	"{\n\t\"correct\": \"sgfd\",\n\t\"image\": \"\",\n\t\"level\": \"\",\n\t\"options\": [\n\t\t\"asdf\",\n\t\t\"asdf\",\n\t\t\"asdf\",\n\t\t\"sgfd\"\n\t],\n\t\"question\": \"sdfsdf\",\n\t\"xp\": \"\"\n}",
+	"{\n\t\"correct\": \"sgfd\",\n\t\"image\": \"\",\n\t\"level\": \"\",\n\t\"options\": [\n\t\t\"asdf\",\n\t\t\"asdf\",\n\t\t\"asdf\",\n\t\t\"sgfd\"\n\t],\n\t\"question\": \"sdfsdf\",\n\t\"xp\": \"\"\n}",
+	{
+		"correct": "fgdfg",
+		"image": "",
+		"level": "",
+		"options": [
+			"asdf",
+			"asdf",
+			"affg",
+			"fgdfg"
+		],
+		"question": "alsdkjf asdlfkjaoiejldskjflsdjlsdkaj f",
+		"xp": ""
+	},
+	{
+		"correct": "fgdfg",
+		"image": "",
+		"level": "",
+		"options": [
+			"asdf",
+			"asdf",
+			"affg",
+			"fgdfg"
+		],
+		"question": "alsdkjf asdlfkjaoiejldskjflsdjlsdkaj f",
+		"xp": ""
+	}
+]

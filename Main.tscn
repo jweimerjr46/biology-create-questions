@@ -45,6 +45,14 @@ item_count = 1
 item_0/text = "Stats"
 item_0/id = 0
 
+[node name="FileDialogJSON" type="FileDialog" parent="MarginContainer2/MainMenu"]
+title = "Open a File"
+size = Vector2i(800, 400)
+content_scale_factor = 1.5
+ok_button_text = "Open"
+file_mode = 0
+root_subfolder = "questions"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -316,6 +324,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 
+[connection signal="id_pressed" from="MarginContainer2/MainMenu/File" to="." method="_on_file_id_pressed"]
+[connection signal="file_selected" from="MarginContainer2/MainMenu/FileDialogJSON" to="." method="_on_file_dialog_json_file_selected"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer7/CreateQuestionButton" to="." method="_on_create_question_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer7/SaveQuestion" to="." method="_on_save_question_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/SelectImageButton" to="." method="_on_select_image_button_pressed"]
 [connection signal="file_selected" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/FileDialog" to="." method="_on_file_dialog_file_selected"]
