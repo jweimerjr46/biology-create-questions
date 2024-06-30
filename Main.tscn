@@ -293,6 +293,10 @@ file_mode = 0
 root_subfolder = "images"
 use_native_dialog = true
 
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
 [node name="ImagePreviewLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
