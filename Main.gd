@@ -51,10 +51,7 @@ func _on_create_question_button_pressed():
 		 "options":[option_1.text, option_2.text, option_3.text, option_4.text],
 		"correct": correct_answer, "xp": xp_text.text, "level": level_text.text, "image": image_file_name}
 		var json_string = JSON.stringify(question_dict, "\t")
-		print(json_string)
-		#json = JSON.new()
-		#json.parse(json_string_question)
-		#print(json.data)
+		#print(json_string)
 		preview_text.text = json_string
 	else:
 		print("You have not checked an answer")
@@ -90,7 +87,7 @@ func add_question_to_json(question):
 	var parsed_data = JSON.new()
 	parsed_data.parse(json_data)
 	var questions_array = parsed_data.data
-	print(questions_array)
+	#print(questions_array)
 	questions_array.append(question)
 	var json_string = JSON.stringify(questions_array, "\t")
 	file = FileAccess.open(questions_json, FileAccess.WRITE)
