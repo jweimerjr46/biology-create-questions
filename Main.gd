@@ -21,11 +21,11 @@ var questions_json = ""
 var json
 var question_dict = {}
 
+@onready var stats_info = $MarginContainer/HBoxContainer/VBoxContainer2/InfoLabel
+
 
 func _ready():
-	pass
-
-	
+	pass	
 
 
 '''
@@ -64,24 +64,65 @@ func _on_select_image_button_pressed():
 func _on_file_dialog_file_selected(path):
 	image_file_name = get_image.current_file
 	image_preview_label.text = "[center][img]"+path+"[/img][/center]"	
-	print(get_image.current_file)
+	#print(get_image.current_file)
 
 
 func _on_file_dialog_json_file_selected(path):
 	questions_json = path
-	print(path)
+	calc_stats()
 
+
+func calc_stats():
+	var file = FileAccess.open(questions_json, FileAccess.READ)
+	var json_data = file.get_as_text()
+	file.close()
+	var parsed_data = JSON.new()
+	parsed_data.parse(json_data)
+	var questions_array = parsed_data.get_data()
+	var level_0 = 0
+	var level_0_xp = 0
+	var level_1 = 0
+	var level_1_xp = 0
+	var level_2 = 0
+	var level_2_xp = 0
+	var level_3 = 0
+	var level_3_xp = 0
+	var level_4 = 0
+	var level_4_xp = 0
+	var level_5 = 0
+	var level_5_xp = 0
+	for item in questions_array:
+		match item['level']:
+			"0":
+				level_0 += 1
+				level_0_xp += int(item["xp"])
+			"1":
+				level_1 += 1
+			"2":
+				level_2 += 1
+			"3":
+				level_3 += 1
+			"4":
+				level_4 += 1
+			"5":
+				level_5 += 1
+	stats_info.text = "Level 0: %s Total XP: %s
+	Level 1: %s 
+	Level 2: %s
+	Level 3: %s
+	Level 4: %s
+	Level 5: %s" % [str(level_0), str(level_0_xp), str(level_1), str(level_2), str(level_3), str(level_4), str(level_5)]
 
 func _on_file_id_pressed(id):
-	print(id)
+	#print(id)
 	if id == 0:
 		get_json.visible = true
 		
 
 func add_question_to_json(question):
-	print(questions_json)
+	#print(questions_json)
 	var file = FileAccess.open(questions_json, FileAccess.READ)
-	print(file)
+	#print(file)
 	var json_data = file.get_as_text()
 	file.close()
 	var parsed_data = JSON.new()
