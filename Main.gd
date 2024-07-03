@@ -81,16 +81,22 @@ func calc_stats():
 	var questions_array = parsed_data.get_data()
 	var level_0 = 0
 	var level_0_xp = 0
+	var level_0_avg = 0
 	var level_1 = 0
 	var level_1_xp = 0
+	var level_1_avg = 0
 	var level_2 = 0
 	var level_2_xp = 0
+	var level_2_avg = 0
 	var level_3 = 0
 	var level_3_xp = 0
+	var level_3_avg = 0
 	var level_4 = 0
 	var level_4_xp = 0
+	var level_4_avg = 0
 	var level_5 = 0
 	var level_5_xp = 0
+	var level_5_avg = 0
 	for item in questions_array:
 		match item['level']:
 			"0":
@@ -98,20 +104,41 @@ func calc_stats():
 				level_0_xp += int(item["xp"])
 			"1":
 				level_1 += 1
+				level_1_xp += int(item["xp"])
 			"2":
 				level_2 += 1
+				level_2_xp += int(item["xp"])
 			"3":
 				level_3 += 1
+				level_3_xp += int(item["xp"])
 			"4":
 				level_4 += 1
+				level_4_xp += int(item["xp"])
 			"5":
 				level_5 += 1
-	stats_info.text = "Level 0: %s Total XP: %s
-	Level 1: %s 
-	Level 2: %s
-	Level 3: %s
-	Level 4: %s
-	Level 5: %s" % [str(level_0), str(level_0_xp), str(level_1), str(level_2), str(level_3), str(level_4), str(level_5)]
+				level_5_xp += int(item["xp"])
+				
+	if level_0 > 0:
+		level_0_avg = 1.0*level_0_xp/level_0
+	if level_1 > 0:
+		level_1_avg = 1.0*level_1_xp/level_1
+	if level_2 > 0:
+		level_2_avg = 1.0*level_2_xp/level_2
+	if level_3 > 0:
+		level_3_avg = 1.0*level_3_xp/level_3
+	if level_4 > 0:
+		level_4_avg = 1.0*level_4_xp/level_4
+	if level_5 > 0:
+		level_5_avg = 1.0*level_5_xp/level_5
+	stats_info.text = "Level 0: %s %s %.1f  Level 3: %s %s %.1f
+	Level 1: %s %s %.1f   Level 4: %s %s %.1f
+	Level 2: %s %s %.1f   Level 5: %s %s %.1f" % [level_0, level_0_xp, level_0_avg,
+	 level_3, level_3_xp, level_3_avg,
+	 level_1, level_1_xp, level_1_avg,
+	 level_4, level_4_xp, level_4_avg,
+	 level_2, level_2_xp, level_2_avg,
+	 level_5, level_5_xp, level_5_avg] 
+	
 
 func _on_file_id_pressed(id):
 	#print(id)
