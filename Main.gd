@@ -161,6 +161,7 @@ func add_question_to_json(question):
 	file = FileAccess.open(questions_json, FileAccess.WRITE)
 	file.store_string(json_string)
 	file.close()
+	calc_stats()
 
 
 func _on_save_question_pressed():

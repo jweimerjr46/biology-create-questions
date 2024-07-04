@@ -63,7 +63,7 @@
 		],
 		"question": "What does the following Python code do?",
 		"xp": "5"
-	},	
+	},
 	{
 		"correct": "fgdfg",
 		"image": "",
@@ -89,5 +89,31 @@
 		],
 		"question": "alsdkjf asdlfkjaoiejldskjflsdjlsdkaj f",
 		"xp": ""
+	},
+	{
+		"correct": "oxygen",
+		"image": "",
+		"level": "1",
+		"options": [
+			"oxygen",
+			"carbon dioxide",
+			"carbon",
+			"light energy"
+		],
+		"question": "What is an output of photosynthesis?",
+		"xp": "10"
+	},
+	{
+		"correct": "bluegill",
+		"image": "",
+		"level": "3",
+		"options": [
+			"bluegill",
+			"frog",
+			"tree",
+			"rock"
+		],
+		"question": "What is the name of a fish?",
+		"xp": "5"
 	}
 ]
