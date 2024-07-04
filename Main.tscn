@@ -263,7 +263,19 @@ theme_override_font_sizes/font_size = 35
 text = "STATS
 "
 
-[node name="InfoLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="InfoLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer8"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "This is where the stats will be 
+displayed
+
+"
+
+[node name="InfoLabel2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer8"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "This is where the stats will be 

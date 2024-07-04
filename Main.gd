@@ -21,7 +21,8 @@ var questions_json = ""
 var json
 var question_dict = {}
 
-@onready var stats_info = $MarginContainer/HBoxContainer/VBoxContainer2/InfoLabel
+@onready var stats_info = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer8/InfoLabel
+@onready var stats_info2 = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer8/InfoLabel2
 
 
 func _ready():
@@ -130,14 +131,16 @@ func calc_stats():
 		level_4_avg = 1.0*level_4_xp/level_4
 	if level_5 > 0:
 		level_5_avg = 1.0*level_5_xp/level_5
-	stats_info.text = "Level 0: %s-%s-%.1f  Level 3: %s-%s-%.1f
-	Level 1: %s-%s-%.1f   Level 4: %s-%s-%.1f
-	Level 2: %s-%s-%.1f   Level 5: %s-%s-%.1f" % [level_0, level_0_xp, level_0_avg,
-	 level_3, level_3_xp, level_3_avg,
-	 level_1, level_1_xp, level_1_avg,
+	stats_info.text = "Level 0: %s-%s-%.1f
+	Level 1: %s-%s-%.1f
+	Level 2: %s-%s-%.1f" % [level_0, level_0_xp, level_0_avg,
+	 level_1, level_1_xp, level_1_avg, 
+	 level_2, level_2_xp, level_2_avg]
+	stats_info2.text = "Level 3: %s-%s-%.1f
+	Level 4: %s-%s-%.1f
+	Level 5: %s-%s-%.1f" % [level_3, level_3_xp, level_3_avg,
 	 level_4, level_4_xp, level_4_avg,
-	 level_2, level_2_xp, level_2_avg,
-	 level_5, level_5_xp, level_5_avg] 
+	 level_5, level_5_xp, level_5_avg]
 	
 
 func _on_file_id_pressed(id):
